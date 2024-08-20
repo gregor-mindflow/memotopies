@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="100%" height="100%" viewBox="0 0 1426 979" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            /* Container for the map */
+            .map-container {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* Tooltip styling */
+            .tooltip {
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+            }
+
+            .tooltip path {
+                fill: #2D2C2B;
+            }
+
+            /* Common saison background styling */
+            .saison-background {
+                stroke-miterlimit: 10;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            /* Individual saison background styling */
+            .saison-1 .saison-background {
+                stroke: #d28232;
+                fill: #d28232;
+            }
+
+            .saison-2 .saison-background {
+                fill: rgba(245, 130, 140, 0.5);
+            }
+
+            .saison-3 .saison-background {
+                fill: rgba(130, 125, 245, 0.5);
+            }
+
+            /* Tooltip path styling for saison-2 and saison-3 */
+            .saison-2 .tooltip path,
+            .saison-3 .tooltip path {
+                fill: rgba(45, 44, 43, 0.5);
+                /* stroke-width: 1px; */
+                /* stroke: red */
+            }
+
+            /* Hover effects for saison backgrounds */
+            .saison-1:hover .saison-background {
+                stroke-width: 1px;
+                fill: #D2C3AF;
+                stroke: #2D2C2B;
+            }
+
+            .saison-2:hover .saison-background,
+            .saison-3:hover .saison-background {
+                stroke-width: 1px;
+            }
+
+            /* Tooltip visibility on hover */
+            .saison:hover .tooltip {
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
+    </defs>
     <!-- City Map -->
     <image x="0" y="0" width="100%" height="100%"
         href="https://uploads-ssl.webflow.com/6606fa07f116d6dc39cd6105/66c431c7625abb0e4917a13b_Plan.png" />
